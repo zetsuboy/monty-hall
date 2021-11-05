@@ -1,0 +1,78 @@
+.background {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+background: NavajoWhite;
+}
+
+.break {
+flex-basis: 100%;
+height: 0;
+}
+
+.door_boxes {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+height: 300px;
+width: 1000px;
+margin-top: 150px;
+}
+
+.door_box {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+height: 300px;
+width: 200px;
+background: orange;
+font-size: 20px;
+}
+
+.door {
+height: 265px;
+width: 200px;
+background: orange;
+}
+
+.wrong_door {
+height: 265px;
+width: 200px;
+background: black;
+border-top: solid 2px black;
+animation-duration: 1s;
+animation-name: door_open;
+}
+
+.correct_door {
+height: 265px;
+width: 200px;
+background: white;
+border-top: solid 2px black;
+animation-duration: 1s;
+animation-name: door_open;
+}
+
+@keyframes door_open {
+from {
+	height: 0px;
+}
+
+to {
+	height: 265px;
+}
+}
+
+.stats {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 1000px;
+height: 200px;
+}

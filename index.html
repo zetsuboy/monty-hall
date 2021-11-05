@@ -1,0 +1,42 @@
+<!DOCTYPE hmtl>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css.css">
+    <meta charset="utf-8">
+    <title>Монти-Холл</title>
+    <script src="jscript.js"></script>
+  </head>
+  <body onload="create_doors()">
+      <div class="background" id="back">
+	<div class="door_boxes">
+          <div class="door_box" id="door_box1">
+		<b>1</b>
+		<div class="door" id="door1" onclick="door_click(this)"></div>
+	  </div>
+          <div class="door_box" id="door_box2">
+		<b>2</b>
+		<div class="door" id="door2" onclick="door_click(this)"></div>
+	  </div>
+          <div class="door_box" id="door_box3">
+		<b>3</b>
+		<div class="door" id="door3" onclick="door_click(this)"></div>
+	  </div>
+	</div>
+	<div class="break"></div>
+	<div class="stats" id="stats">
+	  <div class="stats_door_changed" id="stats_door_changed">
+		<b><center>Выбрана другая дверь</center></b>
+		<p>Всего попыток: 0</p>
+		<p>Побед: 0</p>
+		<p>Поражений: 0</p>
+	  </div>
+	  <div class="stats_door_not_changed" id="stats_door_not_changed">
+		<b><center>Выбрана исходная дверь</center></b>
+		<p>Всего попыток: 0</p>
+		<p>Побед: 0</p>
+		<p>Поражений: 0</p>
+	  </div>
+	</div>
+      </div>
+  </body>
+</html>
