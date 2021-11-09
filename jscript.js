@@ -21,6 +21,7 @@ function create_doors() {
 function refresh() {
 	for (let i = 0; i < 3; i++) {
 		document.getElementById(`door${i + 1}`).disabled = false;
+		document.getElementById(`door${i + 1}`).setAttribute('onclick', 'door_click(this)');
 		document.getElementById(`door${i + 1}`).className = "door";
 	}
 	create_doors();
@@ -31,6 +32,7 @@ function door_click(obj) {
 	var wrong_doors = [];
 	if (checker == 0) {
 		first_picked_door = door_number - 1;
+		obj.className = "picked_door";
 		checker = 1;
 		for (let i = 0; i < 3; i++) {
 			if (doors[i].correct == 0 && doors[i].number != door_number - 1) {
@@ -39,7 +41,7 @@ function door_click(obj) {
 		}
 		var x = Math.floor(Math.random() * wrong_doors.length);
 		document.getElementById(`door${wrong_doors[x].number + 1}`).className = "wrong_door";
-		document.getElementById(`door${wrong_doors[x].number + 1}`).disabled = true;
+		document.getElementById(`door${wrong_doors[x].number + 1}`).setAttribute('onclick', '');
 	}
 	else if (checker == 1) {
 		for (let i = 0; i < 3; i ++) {
@@ -79,8 +81,5 @@ function door_click(obj) {
 		<p>Побед: ${door_not_changed_wins}</p>
 		<p>Поражений: ${door_not_changed_loses}</p>`;
 		checker = 2;
-	}
-	else { 
-		refresh(); 
 	}
 }
